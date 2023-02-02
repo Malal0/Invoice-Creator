@@ -1,0 +1,78 @@
+/*
+    4A4E74
+    918E9B
+    FFFFFF
+    D5D4D8
+    2B283A
+    3770ED
+    C3C6DB
+    F5F5F5
+*/
+
+:root {
+    /*HEADER*/
+    --headerBG: #F5F5F5;
+    --headerC: #2B283A;
+    /*TASK BUTTONS*/
+    --taskBG: #FFFFFF;
+    --taskC: #4A4E74;
+    --taskBorder: #D5D4D8;
+    /*MAIN*/
+    --label: #918E9B;
+
+}
+
+/*/////////////////////
+    GLOBAL
+/////////////////////*/
+
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: var(--headerBG);
+    color: var(--headerC);
+}
+
+label {
+    color: var(--label);
+}
+
+/*/////////////////////
+    CLASSES
+/////////////////////*/
+
+.task-btns-container {
+    /* background-color: var(--taskBG);
+    border: 1px solid var(--taskBorder);
+    color: var(--taskC); */
+}
+
+.task-btns-container,
+.labels-container,
+.notes-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.task-btns-container button {
+    background-color: var(--taskBG);
+    border: 1px solid var(--taskBorder);
+    color: var(--taskC);
+}
+
+/*/////////////////////
+    UTILITY
+/////////////////////*/
+
+.container {
+    width: 90%;
+    margin: auto;
+}

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invoice Creator</title>
+    <link rel="stylesheet" href="index.css" />
+    <script type="text/javascript" src="index.js" defer></script>
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <h1>Invoice creator</h1>
+            <p>Thanks for choosing GoodCorp, LLC!</p>
+        </div>
+    </header>
+    <main class="container">
+        <div class="task-btns-container ">
+            <button>Wash Car: $10</button>
+            <button>Mow Lawn: $20</button>
+            <button>Pull Weeds: $30</button>
+        </div>
+
+        <!--tasks container-->
+        <div class="tasks-container">
+            <!--2 labels-->
+            <div class="labels-container">
+                <label>task</label>
+                <label>total</label>
+            </div>
+            <!--3 divs-->
+            <!--Bold text-->
+            <div class="task">
+                <p class="task-title">wash car</p>
+                <button class="task-remove-btn">remove</button>
+                <p>$<span class="task-price">10</span></p>
+            </div>
+            <div class="task">
+                <p class="task-title">mow lawn</p>
+                <button class="task-remove-btn">remove</button>
+                <p>$<span class="task-price">20</span></p>
+            </div>
+            <div class="task">
+                <p class="task-title">pull weeds</p>
+                <button class="task-remove-btn">remove</button>
+                <p>$<span class="task-price">30</span></p>
+            </div>
+        </div>
+
+        <!--horizontal line-->
+        <hr />
+
+        <!--notescontainer-->
+        <!--notes-->
+        <!--total amount-->
+        <div class="notes-container">
+            <div class="notes">
+                <label>notes</label>
+                <p class="note">We accept cash, credit card, or PayPal</p>
+            </div>
+            <div class="total-container">
+                <label>total amount</label>
+                <p class="total-amount">$60</p>
+            </div>
+        </div>
+
+        <!--send invoice button-->
+        <button class="send-invoice-btn">Send invoice</button>
+    </main>
+
+</body>
+
+</html>
