@@ -41,6 +41,7 @@ h1 {
 header {
     background-color: var(--headerBG);
     color: var(--headerC);
+    text-align: center;
 }
 
 label {
@@ -72,6 +73,23 @@ label {
 
 .task {
     display: flex;
+}
+
+.task-title {
+    font-weight: 600;
+}
+
+.task-remove-btn {
+    margin-right: auto;
+}
+
+
+.total-container {
+    text-align: end;
+}
+
+.send-invoice-btn {
+    width: 100%;
 }
 
 /*/////////////////////
