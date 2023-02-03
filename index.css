@@ -174,7 +174,6 @@ hr {
     margin: 3.3125em 0;
 }
 
-.send-invoice-btn:focus,
 .send-invoice-btn:hover {
     background-color: white;
     color: var(--send);
