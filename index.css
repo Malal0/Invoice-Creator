@@ -1,14 +1,3 @@
-/*
-    4A4E74
-    918E9B
-    FFFFFF
-    D5D4D8
-    2B283A
-    3770ED
-    C3C6DB
-    F5F5F5
-*/
-
 :root {
     /*HEADER*/
     --headerBG: #F5F5F5;
@@ -82,6 +71,10 @@ hr {
     gap: .75em;
 }
 
+.task-btns-container {
+    margin: 2.3125em 0;
+}
+
 .task-btns-container button {
     background-color: var(--taskBG);
     border: 1px solid var(--taskBorder);
@@ -91,12 +84,24 @@ hr {
     flex: 1;
 }
 
+.tasks-container .labels-container {
+    margin-top: 3em;
+}
+
+.tasks {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5em;
+    margin: 1em 0;
+}
+
 .task {
     align-items: center;
     color: var(--label);
     display: flex;
     font-size: 1.5rem;
     font-weight: 300;
+    height: 1.375em;
 }
 
 .task-title {
@@ -160,6 +165,7 @@ hr {
     font-size: 1rem;
     padding: 11px;
     width: 100%;
+    margin: 3.3125em 0;
 }
 
 /*/////////////////////
