@@ -17,9 +17,10 @@
     --taskBG: #FFFFFF;
     --taskC: #4A4E74;
     --taskBorder: #D5D4D8;
-    /*MAIN*/
+    /*MISC*/
     --label: #918E9B;
-
+    --hr: #C3C6DB;
+    --send: #3770ED;
 }
 
 /*/////////////////////
@@ -46,16 +47,31 @@ header {
 
 label {
     color: var(--label);
+    display: block;
+    font-size: .75rem;
+    text-transform: uppercase;
+}
+
+button {
+    cursor: pointer;
+    font-family: inherit;
+}
+
+hr {
+    color: var(--hr);
 }
 
 /*/////////////////////
     CLASSES
 /////////////////////*/
 
-.task-btns-container {
-    /* background-color: var(--taskBG);
-    border: 1px solid var(--taskBorder);
-    color: var(--taskC); */
+.header {
+    padding: 3.75em;
+}
+
+.header h1 {
+    font-size: 2.5rem;
+    font-weight: 800;
 }
 
 .task-btns-container,
@@ -63,32 +79,86 @@ label {
 .notes-container {
     display: flex;
     justify-content: space-between;
+    gap: .75em;
 }
 
 .task-btns-container button {
     background-color: var(--taskBG);
     border: 1px solid var(--taskBorder);
+    border-radius: .4375em;
     color: var(--taskC);
+    padding: .9em;
+    flex: 1;
 }
 
 .task {
+    align-items: center;
+    color: var(--label);
     display: flex;
+    font-size: 1.5rem;
+    font-weight: 300;
 }
 
 .task-title {
+    font-size: 1.25rem;
     font-weight: 600;
+    text-transform: capitalize;
+}
+
+.task-title,
+.task-price {
+    color: var(--taskC);
 }
 
 .task-remove-btn {
+    background-color: transparent;
+    border: none;
+    color: inherit;
+    font-size: .6rem;
+    margin-left: 1em;
     margin-right: auto;
+    padding: 0;
+    text-transform: capitalize;
 }
 
+.task-remove-btn:focus,
+.task-remove-btn:hover {
+    color: var(--taskC);
+}
+
+.task-price {
+    font-weight: 500;
+}
+
+.notes-container {
+    color: var(--taskC);
+}
+
+.notes-container label {
+    margin: .6875em 0;
+}
+
+.note {
+    font-size: .75rem;
+}
 
 .total-container {
     text-align: end;
 }
 
+.total-amount {
+    font-size: 2.25rem;
+    font-weight: 600;
+    margin: 0;
+}
+
 .send-invoice-btn {
+    background-color: var(--send);
+    border: none;
+    border-radius: .5em;
+    color: white;
+    font-size: 1rem;
+    padding: 11px;
     width: 100%;
 }
 
