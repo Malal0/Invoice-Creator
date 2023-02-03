@@ -3,6 +3,9 @@
 /////////////////////*/
 const tasksContainer = document.getElementById("tasks-container");
 const totalEl = document.getElementById("total-el");
+const noteEl = document.getElementById("note-el");
+const totalAmountEl = document.getElementById("total-amount-el");
+
 const data = [
     {
         name: "wash car",
@@ -20,7 +23,6 @@ const data = [
         id: 3
     }
 ];
-
 const tasks = [];
 
 /*/////////////////////
@@ -28,57 +30,59 @@ const tasks = [];
 /////////////////////*/
 
 function handleClick(e) {
-    if (e.target.parentNode.id === "task-btns-container") {
+    if (e.target.parentNode.id === "task-btns-container" && !tasks.includes(getObject(e))) {
         addObject(e);
     } else if (e.target.parentNode.parentNode.id === "tasks-container") {
-        removeObject();
-    } else if (e.target.id === "send-invoice-btn") {
-        sendInvoice();
+        removeObject(e);
+    } else if (e.target.id === "send-invoice-btn" && tasks.length) {
+        sendInvoice(e);
     }
 }
 
 function addObject(e) {
-    tasks.unshift(getObject(e.target.dataset.id));
-    console.log("object added");
-
+    tasks.unshift(getObject(e));
     renderContent();
 }
 
-function removeObject() {
+function removeObject(e) {
+    tasks.splice(tasks.indexOf(getObject(e)), 1);
     console.log("object removed");
+    renderContent();
 }
 
-function sendInvoice() {
-    console.log("Invoice sent");
+function sendInvoice(e) {
+    tasks.splice(0);
+    renderContent();
+    e.target.blur();
+    alert("Congratulations, your Invoice was sent to the Ether");
 }
 
 function renderTasks() {
     const string = tasks.map(task => `
         <div class="task">
             <p class="task-title">${task.name}</p>
-            <button class="task-remove-btn">remove</button>
+            <button class="task-remove-btn" data-id="${task.id}">remove</button>
             <p>$<span class="task-price">${task.price}</span></p>
         </div>
     `).join('');
     tasksContainer.innerHTML = string;
-    console.log("Tasks rendered");
 }
 
 function renderTotal() {
     const total = tasks.reduce((total, task) => total + task.price, 0);
     totalEl.innerHTML = total;
-    console.log("Total rendered");
 }
 
 function renderContent() {
     renderTasks();
     renderTotal();
 
-    console.log("Content rendered");
+    noteEl.classList.toggle("hidden", tasks.length === 0);
+    totalAmountEl.classList.toggle("zero", tasks.length === 0);
 }
 
-function getObject(id) {
-    return data.filter(obj => obj.id == id)[0];
+function getObject(e) {
+    return data.filter(obj => obj.id == e.target.dataset.id)[0];
 }
 
 /*/////////////////////
