@@ -26,9 +26,9 @@
     </header>
     <main class="container">
         <div class="task-btns-container " id="task-btns-container">
-            <button>Wash Car: $10</button>
-            <button>Mow Lawn: $20</button>
-            <button>Pull Weeds: $30</button>
+            <button data-id="1">Wash Car: $10</button>
+            <button data-id="2">Mow Lawn: $20</button>
+            <button data-id="3">Pull Weeds: $30</button>
         </div>
 
         <!--tasks container-->
@@ -40,21 +40,7 @@
             </div>
 
             <div class="tasks-container" id="tasks-container">
-                <div class="task">
-                    <p class="task-title">wash car</p>
-                    <button class="task-remove-btn">remove</button>
-                    <p>$<span class="task-price">10</span></p>
-                </div>
-                <div class="task">
-                    <p class="task-title">mow lawn</p>
-                    <button class="task-remove-btn">remove</button>
-                    <p>$<span class="task-price">20</span></p>
-                </div>
-                <div class="task">
-                    <p class="task-title">pull weeds</p>
-                    <button class="task-remove-btn">remove</button>
-                    <p>$<span class="task-price">30</span></p>
-                </div>
+                <!--  tasks   -->
             </div>
         </div>
 
@@ -67,7 +53,7 @@
             </div>
             <div class="total-container">
                 <label>total amount</label>
-                <p class="total-amount">$60</p>
+                <p class="total-amount">$<span id="total-el">0</span></p>
             </div>
         </div>
 
