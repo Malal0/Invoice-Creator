@@ -84,11 +84,17 @@ hr {
     flex: 1;
 }
 
-.tasks-container .labels-container {
+.task-btns-container button:focus,
+.task-btns-container button:hover {
+    border: 1px solid var(--taskC);
+    scale: 1.025;
+}
+
+.tasks-section .labels-container {
     margin-top: 3em;
 }
 
-.tasks {
+.tasks-container {
     display: flex;
     flex-direction: column;
     gap: 1.5em;
@@ -159,13 +165,19 @@ hr {
 
 .send-invoice-btn {
     background-color: var(--send);
-    border: none;
+    border: 1px solid var(--send);
     border-radius: .5em;
     color: white;
     font-size: 1rem;
     padding: 11px;
     width: 100%;
     margin: 3.3125em 0;
+}
+
+.send-invoice-btn:focus,
+.send-invoice-btn:hover {
+    background-color: white;
+    color: var(--send);
 }
 
 /*/////////////////////
