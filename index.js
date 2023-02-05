@@ -5,7 +5,9 @@ const tasksContainer = document.getElementById("tasks-container");
 const totalEl = document.getElementById("total-el");
 const noteEl = document.getElementById("note-el");
 const totalAmountEl = document.getElementById("total-amount-el");
-
+const taskInput = document.getElementById("task-input");
+const taskPriceOptions = document.getElementById("task-price-options");
+const addTaskBtn = document.getElementById("add-task-btn");
 const data = [
     {
         name: "wash car",
@@ -25,28 +27,43 @@ const data = [
 ];
 const tasks = [];
 
+let id = 4;
+
 /*/////////////////////
     FUNCTIONS
 /////////////////////*/
 
 function handleClick(e) {
-    if (e.target.parentNode.id === "task-btns-container" && !tasks.includes(getObject(e))) {
+    if (e.target.parentNode.id === "task-btns-container" && !tasks.includes(getObject(e, data))) {
         addObject(e);
     } else if (e.target.parentNode.parentNode.id === "tasks-container") {
         removeObject(e);
     } else if (e.target.id === "send-invoice-btn" && tasks.length) {
         sendInvoice(e);
+    } else if (e.target.id === "add-task-btn" && taskInput.value.trim()) {
+        addCustomObject();
     }
 }
 
 function addObject(e) {
-    tasks.unshift(getObject(e));
+    tasks.unshift(getObject(e, data));
+    renderContent();
+}
+
+function addCustomObject() {
+    tasks.unshift({
+        name: taskInput.value,
+        price: Number(taskPriceOptions.value),
+        id: id++ // an easy way to get nonrepeating IDs
+    });
+    taskInput.value = "";
+    taskInput.focus();
     renderContent();
 }
 
 function removeObject(e) {
-    tasks.splice(tasks.indexOf(getObject(e)), 1);
-    console.log("object removed");
+    console.log(getObject(e, tasks));
+    tasks.splice(tasks.indexOf(getObject(e, tasks)), 1);
     renderContent();
 }
 
@@ -76,13 +93,14 @@ function renderTotal() {
 function renderContent() {
     renderTasks();
     renderTotal();
-
     noteEl.classList.toggle("hidden", tasks.length === 0);
     totalAmountEl.classList.toggle("zero", tasks.length === 0);
+
+    console.log(tasks);
 }
 
-function getObject(e) {
-    return data.filter(obj => obj.id == e.target.dataset.id)[0];
+function getObject(e, arr) {
+    return arr.filter(obj => obj.id == e.target.dataset.id)[0];
 }
 
 /*/////////////////////
@@ -90,5 +108,3 @@ function getObject(e) {
 /////////////////////*/
 
 document.addEventListener("click", handleClick);
-
-renderContent();

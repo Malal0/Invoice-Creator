@@ -50,6 +50,12 @@ hr {
     color: var(--hr);
 }
 
+footer {
+    text-align: center;
+    color: var(--label);
+    margin-bottom: 2em;
+}
+
 /*/////////////////////
     CLASSES
 /////////////////////*/
@@ -88,6 +94,35 @@ hr {
 .task-btns-container button:hover {
     border: 1px solid var(--taskC);
     scale: 1.025;
+}
+
+.task-inputs-container {
+    display: flex;
+    width: 100%;
+    height: 2.8125em;
+}
+
+.task-inputs-container input {
+    border: 1px solid var(--label);
+    border-radius: 7px 0 0 7px;
+    padding: 12px;
+    width: 100%;
+}
+
+.task-inputs-container select {
+    background-color: #f6f6f6;
+    border: 1px solid var(--label);
+    border-radius: 0;
+    width: 5em;
+    padding: 8px;
+}
+
+.add-task-btn {
+    background-color: var(--send);
+    border: 1px solid var(--send);
+    border-radius: 0 7px 7px 0;
+    color: white;
+    width: 4.5em;
 }
 
 .tasks-section .labels-container {
@@ -174,6 +209,7 @@ hr {
     margin: 3.3125em 0;
 }
 
+.add-task-btn:hover,
 .send-invoice-btn:hover {
     background-color: white;
     color: var(--send);
