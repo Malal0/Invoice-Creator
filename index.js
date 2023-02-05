@@ -40,7 +40,9 @@ function handleClick(e) {
         removeObject(e);
     } else if (e.target.id === "send-invoice-btn" && tasks.length) {
         sendInvoice(e);
-    } else if (e.target.id === "add-task-btn" && taskInput.value.trim()) {
+    } else if (e.target.id === "add-task-btn" &&
+        taskInput.value.trim() &&
+        !tasks.includes(tasks.filter(obj => obj.name == taskInput.value.trim())[0])) {
         addCustomObject();
     }
 }
