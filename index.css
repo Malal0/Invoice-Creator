@@ -46,6 +46,10 @@ button {
     font-family: inherit;
 }
 
+button i {
+    pointer-events: none;
+}
+
 hr {
     color: var(--hr);
 }

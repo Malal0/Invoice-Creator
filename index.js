@@ -40,7 +40,8 @@ function handleClick(e) {
         removeObject(e);
     } else if (e.target.id === "send-invoice-btn" && tasks.length) {
         sendInvoice(e);
-    } else if (e.target.id === "add-task-btn" &&
+    } else if (
+        e.target.id === "add-task-btn" &&
         taskInput.value.trim() &&
         !tasks.includes(tasks.filter(obj => obj.name == taskInput.value.trim())[0])) {
         addCustomObject();
@@ -64,7 +65,6 @@ function addCustomObject() {
 }
 
 function removeObject(e) {
-    console.log(getObject(e, tasks));
     tasks.splice(tasks.indexOf(getObject(e, tasks)), 1);
     renderContent();
 }
@@ -97,8 +97,6 @@ function renderContent() {
     renderTotal();
     noteEl.classList.toggle("hidden", tasks.length === 0);
     totalAmountEl.classList.toggle("zero", tasks.length === 0);
-
-    console.log(tasks);
 }
 
 function getObject(e, arr) {
