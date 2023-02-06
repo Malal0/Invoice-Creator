@@ -28,6 +28,7 @@ const data = [
 const tasks = [];
 
 let id = 4;
+let stretchGoalsVisible = false;
 
 /*/////////////////////
     FUNCTIONS
@@ -45,6 +46,8 @@ function handleClick(e) {
         taskInput.value.trim() &&
         !tasks.includes(tasks.filter(obj => obj.name == taskInput.value.trim())[0])) {
         addCustomObject();
+    } else if (e.target.id === "show-stretch-goals") {
+        showStretchGoals(e);
     }
 }
 
@@ -103,8 +106,34 @@ function getObject(e, arr) {
     return arr.filter(obj => obj.id == e.target.dataset.id)[0];
 }
 
+function showStretchGoals(e) {
+    stretchGoalsVisible = !stretchGoalsVisible
+    document.getElementById("task-inputs-container").classList.toggle("hidden", !stretchGoalsVisible);
+    e.target.innerText = stretchGoalsVisible ? "Hide Stretch Goals" : "Show Stretch Goals";
+}
+
 /*/////////////////////
     EVENT LISTENER
 /////////////////////*/
 
 document.addEventListener("click", handleClick);
+document.addEventListener("keydown", (e) => {
+    if (
+        e.key === "Enter" &&
+        taskInput.value.trim() &&
+        stretchGoalsVisible &&
+        !tasks.includes(tasks.filter(obj => obj.name == taskInput.value.trim())[0])
+    ) {
+        addCustomObject();
+    }
+});
+
+/*/////////////////////
+    DARKMODE
+/////////////////////*/
+const darkModeToggle = document.querySelector(".toggle-darkmode-container");
+const body = document.querySelector("body");
+// const toggle = document.querySelector(".toggle");
+darkModeToggle.addEventListener("click", () => {
+    body.classList.toggle("darkmode");
+})

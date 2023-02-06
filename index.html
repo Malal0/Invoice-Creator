@@ -25,13 +25,14 @@
         </div>
     </header>
     <main class="container">
+        <button class="show-stretch-goals" id="show-stretch-goals">Show Stretch Goals</button>
         <div class="task-btns-container " id="task-btns-container">
             <button data-id="1">Wash Car: $10</button>
             <button data-id="2">Mow Lawn: $20</button>
             <button data-id="3">Pull Weeds: $30</button>
         </div>
 
-        <div class="task-inputs-container" id="task-inputs-container">
+        <div class="task-inputs-container hidden" id="task-inputs-container">
             <input type="text" placeholder="Enter task" id="task-input" />
             <select id="task-price-options">
                 <option value="10">$ 10</option>
@@ -82,7 +83,10 @@
     <footer>
         <p>Powered by <i class="fa-brands fa-square-js"></i> Javascript</p>
     </footer>
-
+    <div class="toggle-darkmode-container">
+        <i class="fa-solid fa-moon"></i>
+        <i class="fa-solid fa-sun"></i>
+    </div>
 </body>
 
 </html>
