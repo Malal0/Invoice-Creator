@@ -38,6 +38,7 @@
 
 * {
     box-sizing: border-box;
+    transition: color 300ms, background 500ms;
 }
 
 html,
@@ -293,7 +294,6 @@ footer {
     border-radius: .75em;
     color: var(--headerC);
     margin: 1em;
-    transition: 300ms;
 }
 
 .toggle-darkmode-container>* {

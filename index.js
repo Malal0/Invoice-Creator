@@ -48,6 +48,8 @@ function handleClick(e) {
         addCustomObject();
     } else if (e.target.id === "show-stretch-goals") {
         showStretchGoals(e);
+    } else if (e.target.id === "toggle-darkmode-container") {
+        document.querySelector("body").classList.toggle("darkmode");
     }
 }
 
@@ -127,13 +129,3 @@ document.addEventListener("keydown", (e) => {
         addCustomObject();
     }
 });
-
-/*/////////////////////
-    DARKMODE
-/////////////////////*/
-const darkModeToggle = document.querySelector(".toggle-darkmode-container");
-const body = document.querySelector("body");
-// const toggle = document.querySelector(".toggle");
-darkModeToggle.addEventListener("click", () => {
-    body.classList.toggle("darkmode");
-})
