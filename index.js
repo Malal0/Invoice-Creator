@@ -49,7 +49,7 @@ function handleClick(e) {
     } else if (e.target.id === "show-stretch-goals") {
         showStretchGoals(e);
     } else if (e.target.id === "toggle-darkmode-container") {
-        document.querySelector("body").classList.toggle("darkmode");
+        document.body.classList.toggle("darkmode");
     }
 }
 
@@ -105,7 +105,7 @@ function renderContent() {
 }
 
 function getObject(e, arr) {
-    return arr.filter(obj => obj.id == e.target.dataset.id)[0];
+    return arr.filter(obj => obj.id === +e.target.dataset.id)[0];
 }
 
 function showStretchGoals(e) {
@@ -114,12 +114,7 @@ function showStretchGoals(e) {
     e.target.innerText = stretchGoalsVisible ? "Hide Stretch Goals" : "Show Stretch Goals";
 }
 
-/*/////////////////////
-    EVENT LISTENER
-/////////////////////*/
-
-document.addEventListener("click", handleClick);
-document.addEventListener("keydown", (e) => {
+function handleKeydown(e) {
     if (
         e.key === "Enter" &&
         taskInput.value.trim() &&
@@ -128,4 +123,11 @@ document.addEventListener("keydown", (e) => {
     ) {
         addCustomObject();
     }
-});
+}
+
+/*/////////////////////
+    EVENT LISTENERS
+/////////////////////*/
+
+document.addEventListener("click", handleClick);
+document.addEventListener("keydown", handleKeydown);
