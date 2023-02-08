@@ -264,7 +264,7 @@ footer {
 /////////////////////*/
 
 .container {
-    width: 90%;
+    width: clamp(15em, 90%, 43em);
     margin: auto;
 }
 
@@ -277,7 +277,7 @@ footer {
 }
 
 /*/////////////////////
-    TOGGLE DARKMODE
+TOGGLE DARKMODE
 /////////////////////*/
 .toggle-darkmode-container {
     position: absolute;
