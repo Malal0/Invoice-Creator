@@ -118,7 +118,6 @@ function handleKeydown(e) {
     if (
         e.key === "Enter" &&
         taskInput.value.trim() &&
-        stretchGoalsVisible &&
         !tasks.includes(tasks.filter(obj => obj.name == taskInput.value.trim())[0])
     ) {
         addCustomObject();
