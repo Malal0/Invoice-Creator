@@ -111,7 +111,7 @@ function getObject(e, arr) {
 function showStretchGoals(e) {
     stretchGoalsVisible = !stretchGoalsVisible
     document.getElementById("task-inputs-container").classList.toggle("hidden", !stretchGoalsVisible);
-    e.target.innerText = stretchGoalsVisible ? "Hide Stretch Goals" : "Show Stretch Goals";
+    e.target.innerText = stretchGoalsVisible ? "Hide Custom Invoice" : "Add Custom Invoice";
 }
 
 function handleKeydown(e) {
